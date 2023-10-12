@@ -1,16 +1,22 @@
 {
   "name": "udemy_pwpro",
+  "private": true,
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "playwright test"
+    "test": "playwright test",
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "@playwright/test": "^1.38.1",
-    "@types/node": "^20.8.4"
+    "@types/node": "^20.8.4",
+    "typescript": "^5.0.2",
+    "vite": "^4.4.5"
   }
 }
