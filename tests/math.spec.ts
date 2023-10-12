@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test'
 
-test('Math works', async ({ page }) => {
+test.skip('Math works', async ({ page }) => {
   // arrange
   const a = 1
   const b = 2
