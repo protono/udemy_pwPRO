@@ -12,11 +12,8 @@ test('should be able to delete a comment', async ({ request }) => {
     var response = await postResponse.json()
     const commentId = response['id']
     // expect(response['id'] == 2)
-    setTimeout(() => {
-        console.log('PUT /comments/' + commentId)
-    }, Math.floor(Math.random() * 1000))
 
-    // console.log('PUT /comments/' + commentId)
+    console.log('PUT /comments/' + commentId)
     const putResponse = await request.put(`/comments/${commentId}`, {
         data: {
             body: 'new body ' + commentId,
