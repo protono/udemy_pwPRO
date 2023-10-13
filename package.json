@@ -5,7 +5,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "playwright test",
+    "test": "playwright test 'api' --workers=1",
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",

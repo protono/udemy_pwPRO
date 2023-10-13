@@ -9,21 +9,26 @@ test('should be able to delete a comment', async ({ request }) => {
         }
     })
     expect(postResponse.status()).toBe(201)
-    var response: string = await postResponse.json()
+    var response = await postResponse.json()
     const commentId = response['id']
     // expect(response['id'] == 2)
+    setTimeout(() => {
+        console.log('PUT /comments/' + commentId)
+    }, Math.floor(Math.random() * 1000))
 
-    const putResponse = await request.put('/comments/' + commentId, {
+    // console.log('PUT /comments/' + commentId)
+    const putResponse = await request.put(`/comments/${commentId}`, {
         data: {
-            body: "new body",
+            body: 'new body ' + commentId,
             postId: 1
         }
     })
     expect(putResponse.status()).toBe(200)
     response = await putResponse.json()
-    expect(response['body'] == 'new body')
+    expect(response['body'] == 'new body' + commentId)
 
-    const deleteResponse = await request.delete('/comments/' + commentId)
+    console.log('DELETE /comments/' + commentId)
+    const deleteResponse = await request.delete(`/comments/${commentId}`)
     expect(deleteResponse.status()).toBe(200)
 
     const getResponse = await request.get('/comments')

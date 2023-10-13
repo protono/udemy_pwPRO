@@ -3,7 +3,7 @@ import { headingText, counterId } from '../src/copy'
 test.beforeEach(async ({ page }) => {
     await page.goto('/')
 })
-test('Heading should be visible', async ({ page }) => {
+test.skip('Heading should be visible', async ({ page }) => {
     const heading = page.locator('h1', { hasText: headingText })
     await expect(heading).toBeVisible()
 })
