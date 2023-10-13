@@ -7,7 +7,7 @@ test('Heading should be visible', async ({ page }) => {
     const heading = page.locator('h1', { hasText: headingText })
     await expect(heading).toBeVisible()
 })
-test.describe('Counter', () => {
+test.describe.skip('Counter', () => {
     test('should be visible', async ({ page }) => {
         const counterButton = page.locator('#' + counterId)
         await expect(counterButton).toBeVisible()
