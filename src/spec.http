@@ -1,0 +1,31 @@
+@api = http://[::1]:3000
+
+###
+GET {{ api }}/posts HTTP/1.1
+
+###
+GET {{ api }}/profile HTTP/1.1
+
+###
+GET {{ api }}/comments HTTP/1.1
+
+###
+POST {{ api }}/comments HTTP/1.1
+Content-Type: application/json
+
+{
+    "body" : "body",
+    "postId" : 1
+}
+
+###
+PUT {{ api }}/comments/1 HTTP/1.1
+Content-Type: application/json
+
+{
+    "body": "new body",
+    "id": 2
+}
+
+###
+DELETE {{ api }}/comments/2 HTTP/1.1
