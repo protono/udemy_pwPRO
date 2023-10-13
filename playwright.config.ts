@@ -77,6 +77,6 @@ export default defineConfig({
     // url: 'http://localhost:5173',
     command: 'npm run db',
     url: 'http://localhost:3000/posts',
-    reuseExistingServer: !process.env.CI,
+    // reuseExistingServer: !process.env.CI,
   },
 })

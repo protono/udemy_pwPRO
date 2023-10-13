@@ -10,9 +10,10 @@ test('should be able to delete a comment', async ({ request }) => {
     })
     expect(postResponse.status()).toBe(201)
     var response: string = await postResponse.json()
-    expect(response['id'] == 2)
+    const commentId = response['id']
+    // expect(response['id'] == 2)
 
-    const putResponse = await request.put('/comments/2', {
+    const putResponse = await request.put('/comments/' + commentId, {
         data: {
             body: "new body",
             postId: 1
@@ -22,7 +23,7 @@ test('should be able to delete a comment', async ({ request }) => {
     response = await putResponse.json()
     expect(response['body'] == 'new body')
 
-    const deleteResponse = await request.delete('/comments/2')
+    const deleteResponse = await request.delete('/comments/' + commentId)
     expect(deleteResponse.status()).toBe(200)
 
     const getResponse = await request.get('/comments')
